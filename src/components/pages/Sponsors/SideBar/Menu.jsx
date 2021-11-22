@@ -16,7 +16,6 @@ const menuItems = {
   sponsor_2: null,
   sponsor_3: null,
   sponsor_4: null,
-
 };
 
 const menuItemNames = {
@@ -66,9 +65,12 @@ const Menu = () => {
       document.documentElement.clientHeight,
       window.innerHeight || 0
     );
+
     for (const key in menuItems) {
-      menuItems[key] =
-        document.getElementById(key).getBoundingClientRect().top + curScroll;
+      try {
+        menuItems[key] =
+          document.getElementById(key).getBoundingClientRect().top + curScroll;
+      } catch (error) { console.log(error)}
     }
     console.log(menuItems);
     const bottom = document.body.offsetHeight;
@@ -114,21 +116,18 @@ const Menu = () => {
       //   break
       // }
 
-      if (menuItems[section] < curPos){
+      if (menuItems[section] < curPos) {
         curSection = section;
         setActiveItem(section);
         console.log(menuItems);
         console.log(curPos);
         // break;
-      } else if (menuItems[section] >= curPos){
+      } else if (menuItems[section] >= curPos) {
         break;
       }
-
-
-    }    
+    }
     // setActiveItem(curSection);
     // console.log(activeItem);
-    
   };
 
   /*
