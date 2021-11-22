@@ -11,18 +11,21 @@ import MenuItem from "./MenuItem";
  * 'Top' generically references the top of the page
  */
 const menuItems = {
-  sponsors: 0,
-  sponsor_1: null,
+  // sponsors: 0,
+  sponsor_1: 0,
   sponsor_2: null,
   sponsor_3: null,
+  sponsor_4: null,
+
 };
 
 const menuItemNames = {
-  sponsors: "Sponsors",
+  // sponsors: "Sponsors",
   sponsor_1: "Sponsor 1",
   sponsor_2: "Sponsor 2",
-  sponsor_3: "Sponsor 3",  
-}
+  sponsor_3: "Sponsor 3",
+  sponsor_4: "Sponsor 4",
+};
 
 /*
  * Our menu component
@@ -32,8 +35,7 @@ const Menu = () => {
    * Store the active menuItem in state to force update
    * when changed
    */
-  const [activeItem, setActiveItem] = useState("Top");
-
+  const [activeItem, setActiveItem] = useState("sponsor_1");
   /*
    * The MutationObserver allows us to watch for a few different
    * events, including page resizing when new elements might be
@@ -43,12 +45,16 @@ const Menu = () => {
    * on our user's scroll depth
    */
   useEffect(() => {
+    getAnchorPoints();
     const observer = new MutationObserver(getAnchorPoints);
     observer.observe(document.getElementById("root"), {
       childList: true,
       subtree: true,
     });
     window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   /*
@@ -66,6 +72,7 @@ const Menu = () => {
     }
     console.log(menuItems);
     const bottom = document.body.offsetHeight;
+    console.log(bottom);
     handleScroll();
   };
 
@@ -75,13 +82,13 @@ const Menu = () => {
    * item is currently active
    */
   const handleScroll = () => {
-    const curPos = window.scrollY;    
-    let curSection = null;
+    const curPos = window.scrollY;
+    let curSection = "sponsor_1";
     // for (let i = 0; i < sections.length; i++) {
     //     if (curPos > sections[i][1] && curPos < sections[i+1][1]){
     //         curSection = sections[i][0];
     //         break;
-    //     }        
+    //     }
     // }
     // console.log(curSection);
 
@@ -93,19 +100,35 @@ const Menu = () => {
      * depth (bottom) section last
      * If your items are out-of-order, this code will not function correctly
      */
+    // console.log(menuItems);
     for (const section in menuItems) {
-      curSection = menuItems[section] >= curPos ? curSection : section;
-      if (curSection !== section) {
-          console.log(menuItems[section]);
-          console.log(curPos);
-        console.log(curSection);
-        break
+      // curSection = menuItems[section] >= curPos ? curSection : section;
+      // console.log(menuItems);
+      // console.log(curPos);
+      // console.log(curSection);
+      // break;
+      // if (curSection !== section) {
+      //     console.log(menuItems[section]);
+      //     console.log(curPos);
+      //   console.log(curSection);
+      //   break
+      // }
+
+      if (menuItems[section] < curPos){
+        curSection = section;
+        setActiveItem(section);
+        console.log(menuItems);
+        console.log(curPos);
+        // break;
+      } else if (menuItems[section] >= curPos){
+        break;
       }
-    }
-    if (curSection !== activeItem) {
-      setActiveItem(curSection)
-      console.log(activeItem);
-    }
+
+
+    }    
+    // setActiveItem(curSection);
+    // console.log(activeItem);
+    
   };
 
   /*
@@ -114,7 +137,7 @@ const Menu = () => {
   const menuList = Object.keys(menuItems).map((e, i) => (
     <MenuItem
       itemName={menuItemNames[e]}
-      anchorId = {e}
+      anchorId={e}
       key={`menuitem_${i}`}
       active={e === activeItem ? true : false}
     />

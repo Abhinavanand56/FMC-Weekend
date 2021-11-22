@@ -1,6 +1,7 @@
 import react, { useState, useEffect } from "react";
+import Classes from "./MenuItem.module.css";
 
-function MenuItem({anchorId, itemName, active }) {
+function MenuItem({ anchorId, itemName, active }) {
   const [anchorTarget, setAnchorTarget] = useState(null);
 
   useEffect(() => {
@@ -27,8 +28,9 @@ function MenuItem({anchorId, itemName, active }) {
       <a
         href={`#${itemName}`}
         onClick={handleClick}
-        className={active}
-        ariaLabel={`Scroll to ${itemName}`}
+        // className={true ? Classes.active : ""}
+        aria-label={`Scroll to ${itemName}`}
+        style={active ? {color: "white" } : {}}
       >
         <h1>{itemName}</h1>
       </a>
