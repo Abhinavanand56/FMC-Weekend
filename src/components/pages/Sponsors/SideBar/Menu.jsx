@@ -61,7 +61,7 @@ const Menu = () => {
    * Programmatically determine where to set AnchorPoints for our Menu
    */
   const getAnchorPoints = () => {
-    const curScroll = window.scrollY - 100;
+    const curScroll = window.scrollY - 120;
     const viewPortHeight = Math.max(
       document.documentElement.clientHeight,
       window.innerHeight || 0
