@@ -70,7 +70,9 @@ const Menu = () => {
       try {
         menuItems[key] =
           document.getElementById(key).getBoundingClientRect().top + curScroll;
-      } catch (error) { console.log(error)}
+      } catch (error) {
+        console.log(error);
+      }
     }
     console.log(menuItems);
     const bottom = document.body.offsetHeight;

@@ -11,7 +11,6 @@ function SponsorSection(props) {
         marginLeft: "5vw",
         paddingTop: "3vh",
       }}
-      
     >
       {/* <h1>Sponsor 1</h1> */}
       <div className={classes.sponsor_title}>
