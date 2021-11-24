@@ -40,3 +40,32 @@
     color: #fff;
     font-size: 100px;
   }
+  .tabs {
+    font-size: 4em;
+    color: #fff;
+    width: 25%;
+  }
+  .card-container {
+    display: flex;
+    float: left;
+    padding: 20px 20px;
+    margin: 20px;
+    width: 80vw;
+  }
+  .event-card {
+    margin-right: 20px;
+    width: 80vw;
+  }
+ Tab label {
+   font-size: 4em;
+ }
+ .card-action {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 600px;
+ }
+ .tab {
+   font-size: 4em;
+ }
+ .btn {
+   padding:10px;
+ }
