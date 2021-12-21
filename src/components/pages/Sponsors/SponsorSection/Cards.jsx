@@ -1,7 +1,7 @@
 import React from "react";
-import react from "react";
+
 import Card from "./Card";
-import Image from "./img_avatar.png";
+
 import classes from "./Cards.module.css";
 
 function Cards() {

@@ -61,10 +61,10 @@ const Menu = () => {
    */
   const getAnchorPoints = () => {
     const curScroll = window.scrollY - 120;
-    const viewPortHeight = Math.max(
-      document.documentElement.clientHeight,
-      window.innerHeight || 0
-    );
+    // const viewPortHeight = Math.max(
+    //   document.documentElement.clientHeight,
+    //   window.innerHeight || 0
+    // );
 
     for (const key in menuItems) {
       try {
@@ -87,7 +87,7 @@ const Menu = () => {
    */
   const handleScroll = () => {
     const curPos = window.scrollY;
-    let curSection = "sponsor_1";
+    // let curSection = "sponsor_1";
     // for (let i = 0; i < sections.length; i++) {
     //     if (curPos > sections[i][1] && curPos < sections[i+1][1]){
     //         curSection = sections[i][0];
@@ -119,7 +119,7 @@ const Menu = () => {
       // }
 
       if (menuItems[section] < curPos) {
-        curSection = section;
+        // curSection = section;
         setActiveItem(section);
         console.log(menuItems);
         console.log(curPos);

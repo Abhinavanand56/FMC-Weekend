@@ -26,50 +26,47 @@ function Navbar() {
 
   return (
     <>
-      <nav className='navbar'>
-        <div className='navbar-container'>
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+      <nav className="navbar">
+        <div className="navbar-container">
+          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             FMC
-            <i class='fab fa-typo3' />
+            <i class="fab fa-typo3" />
           </Link>
-          <div className='menu-icon' onClick={handleClick}>
+          <div className="menu-icon" onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
                 Home
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link
-                to='/workshops'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
+            <li className="nav-item">
+              <Link to="/workshops" className="nav-links" onClick={closeMobileMenu}>
                 Workshops
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link
-                to='/sponsors'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
+            <li className="nav-item">
+              <Link to="/sponsors" className="nav-links" onClick={closeMobileMenu}>
                 Sponsors
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link
-                to='/events'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
+            <li className="nav-item">
+              <Link to="/events" className="nav-links" onClick={closeMobileMenu}>
                 Events
               </Link>
             </li>
+            <li className="nav-item">
+              <Link to="/FAQ" className="nav-links" onClick={closeMobileMenu}>
+                FAQ
+              </Link>
+            </li>
           </ul>
-          {button && <Button isInternalLink={true} toLink="/sign-up" buttonStyle='btn--outline'>SIGN UP</Button>}
+          {button && (
+            <Button isInternalLink={true} toLink="/sign-up" buttonStyle="btn--outline">
+              SIGN UP
+            </Button>
+          )}
         </div>
       </nav>
     </>

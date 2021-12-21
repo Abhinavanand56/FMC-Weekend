@@ -1,4 +1,4 @@
-import react, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 // import Classes from "./MenuItem.module.css";
 
 function MenuItem({ anchorId, itemName, active }) {
