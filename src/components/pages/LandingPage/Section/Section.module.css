@@ -149,32 +149,3 @@
   }
 }
 
-/* 
-.Parent {
-  display: flex;
-  flex-direction: row;
-}
-
-.child1 {
-  width: 70%;
-  height: 100vh;
-  background-color: green;
-  text-align: center;
-  color: white;
-}
-
-.child2 {
-  width: 30%;
-  padding: 30px;
-  height: 100vh;
-  border: green solid 5px;
-  margin: 50px;
-}
-@media screen and (max-width: 600px) {
-  .child1 {
-    width: 100%;
-  }
-  .child2 {
-    width: 100%;
-  }
-} */
