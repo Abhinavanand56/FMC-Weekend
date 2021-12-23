@@ -7,6 +7,7 @@ import events from './components/pages/Events/events';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Sponsors from './components/pages/Sponsors/Sponsors';
 import FAQ from './components/pages/FAQ/FAQ';
+import landingPage from './components/pages/LandingPage/LandingPage';
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/events" component={events} />;
           <Route path="/sponsors" component={Sponsors} />
           <Route path="/FAQ" component={FAQ} />
+          <Route path="/landing" component={landingPage} />
         </Switch>
       </Router>
     </>
