@@ -8,18 +8,21 @@
 .section {
   padding-right: 8vw;
   padding-top: 10vh;
-  padding-bottom: 30vh;
+  padding-bottom: 20vh;
   padding-left: 8vw;
-  text-align: center;
+  /* text-align: center; */
 }
+/* .section h2 {
+  text-align: left;
+} */
 
 /* Create two equal columns that floats next to each other */
 .column_1 {
   float: left;
   width: 60%;
   padding: 10px;
-  padding-top: 4vh;
-  text-align: left;
+  margin-top: 12vh;
+  text-align: justify;
   position: relative;
   /* height: 300px; Should be removed. Only for demonstration */
   /* justify-content: center; */
@@ -50,13 +53,14 @@
   .column_1 {
     width: 100%;
     padding-left: 8vw;
+    margin-top: 0vh;
   }
   .column_2 {
     width: 100vw;
   }
 
   .row {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 
@@ -68,13 +72,21 @@
 }
 
 .section_title {
+  display: inline-block;
+  position: relative;
   font-family: Marcellus;
   font-style: normal;
   font-weight: normal;
   font-size: 48px;
   line-height: 60px;
-
   color: #fcc907;
+  top: 12vh;
+
+  padding-left: 0.7vw;
+  /* float: left; */
+  /* padding-left: 10vw; */
+  /* text-align: left; */
+  /* padding-top: 10vh; */
 }
 
 .section_content {
@@ -102,16 +114,24 @@
   line-height: 33px;
 }
 @media screen and (max-width: 600px) {
-  .column_2{
+  .column_2 {
     padding-left: 0;
   }
   .section {
-    padding-bottom: 0;
+    /* display: flex; */
+    padding-bottom: 10vh;
     padding-left: 0;
+    text-align: center;
+    /* align-items: center; */
   }
 
   .section_title {
+    top: 0;
+    padding-left: 0;
+    display: block;
+    /* position: default; */
     text-align: center;
+    padding-left: 8vw;
   }
   .section_button {
     padding-top: 5vh;

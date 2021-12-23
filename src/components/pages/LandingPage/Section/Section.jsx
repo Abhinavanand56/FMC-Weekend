@@ -4,9 +4,12 @@ function Section(props) {
   return (
     <div className={Classes.section}>
       {/* <h2 >Title</h2> */}
+    {/* <div > */}
+      <h2 className={Classes.section_title}>{props.title}</h2>
+    {/* </div> */}
+
       <div className={Classes.row}>
         <div className={Classes.column_1}>
-          <h2 className={Classes.section_title}>{props.title}</h2>
           <p className={Classes.section_content}>
             {/* After weeks of speculation, uncertainty and postponement, the FMC Weekend is back with a
             bang. After 6 hugely successful editions, this year's edition is going to be just as
@@ -18,22 +21,17 @@ function Section(props) {
             {props.children}
           </p>
           <div className={Classes.section_button}>
-            <Button>
-              {props.buttonText}
-            </Button>
+            <Button>{props.buttonText}</Button>
           </div>
         </div>
         <div className={Classes.column_2}>
           {/* <h2>Column 2</h2>
           <p>Some text..</p> */}
-          
-            <img className={Classes.section_image} src={props.imagePath}></img>
-          
+
+          <img className={Classes.section_image} src={props.imagePath}></img>
         </div>
       </div>
-
     </div>
-
   );
 }
 export default Section;
