@@ -110,7 +110,7 @@ export default function VerticalTabs() {
           )}
           </div>
           
-            <div className="Event-cards">
+            <div className="workshop-cards">
           {Array(3).fill(
             <EventCard type="Workshop" title="The Art of Cinematography" link="By John Watts" />
           )}
