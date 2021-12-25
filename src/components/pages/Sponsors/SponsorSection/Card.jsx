@@ -1,11 +1,11 @@
-import classes from './Card.module.css';
+/* eslint-disable no-unused-vars */
 
-import image_2 from './logo.jpg';
+import classes from "./Card.module.css";
+import image_2 from "./logo.jpg";
 
 function Card() {
   return (
     <div className={classes.parent_wrapper}>
-      <a href="https://www.google.com/">
         <div className={classes.card}>
           <img src={image_2} alt="Avatar" style={{ width: '100%' }} />
           <div className={classes.container}>
@@ -14,7 +14,6 @@ function Card() {
             <h1>Media Sponsor</h1>
           </div>
         </div>
-      </a>
     </div>
   );
 }

@@ -1,15 +1,20 @@
 import React from 'react';
+import MobileLayout from './MobileLayout';
 import SideBar from '../../Sidebar';
-import Footer from '../../Footer';
 import './events.css';
-function App() {
+// import EventTab from './Photography/EventTab';
+// import Drawer from '../../Drawer';
+function Events() {
   return (
-    <>
-      <SideBar />
-
-      <Footer />
-    </>
+    <div>
+      <div className="sidebar">
+        <SideBar />
+      </div>
+      <div className="showOnMobile">
+        <MobileLayout />
+      </div>
+    </div>
   );
 }
 
-export default App;
+export default Events;

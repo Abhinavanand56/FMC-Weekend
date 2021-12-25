@@ -8,6 +8,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Sponsors from './components/pages/Sponsors/Sponsors';
 import FAQ from './components/pages/FAQ/FAQ';
 import landingPage from './components/pages/LandingPage/LandingPage';
+// import BasicStack from './components/pages/Events/EventMobile/EventTab';
+import Photography from './components/pages/Events/MobileView/Photography';
+import Cinematography from './components/pages/Events/MobileView/Cinematography';
+import Outreach from './components/pages/Events/MobileView/Outreach';
+import Design from './components/pages/Events/MobileView/Design';
+import Media from './components/pages/Events/MobileView/Media';
+import Animation from './components/pages/Events/MobileView/Animation';
 function App() {
   return (
     <>
@@ -16,7 +23,13 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/sign-up" component={SignUp} />;
-          <Route path="/events" component={events} />;
+          <Route path="/events" exact component={events} />;
+          <Route path="/events/photography" component={Photography} />;
+          <Route path="/events/cinematography" component={Cinematography} />;
+          <Route path="/events/outreach" component={Outreach} />;
+          <Route path="/events/media" component={Media} />;
+          <Route path="/events/design" component={Design} />;
+          <Route path="/events/animation" component={Animation} />;
           <Route path="/sponsors" component={Sponsors} />
           <Route path="/FAQ" component={FAQ} />
           <Route path="/landing" component={landingPage} />

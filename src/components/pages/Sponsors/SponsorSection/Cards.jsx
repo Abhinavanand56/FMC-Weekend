@@ -1,7 +1,5 @@
 import React from "react";
-
 import Card from "./Card";
-
 import classes from "./Cards.module.css";
 
 function Cards() {
